@@ -1,0 +1,15 @@
+.profileContainer{
+    height: max-content;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    padding-top: 7vh;
+}
+
+.profileContent{
+    height: max-content;
+    width: 100vw;
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
+}
