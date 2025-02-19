@@ -1,0 +1,40 @@
+.navbar{
+    width: 100vw;
+    height: 12vh;
+    background-color: white;
+    position: fixed;
+    z-index: 2;
+}
+#brandLogo{
+    width: 8vw;
+    height: 20vh;
+    margin-top: -4vh;
+}
+.navContainer{
+    width: 80vw;
+    height: 12vh;
+    display: flex;
+    flex-direction: row;
+    padding-left: 11vw;
+    padding-right: 11vw;
+    justify-content: space-between;
+}
+.menuItems{
+    padding-left: 3vw;
+    width: max-content;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.menuItems li{
+    font-weight: 500;
+    font-size: large;
+    font-family: poppins-regular !important;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+    margin-right: 2vw;
+    text-decoration-color: black;
+}
+.menuItems li:hover{
+    text-decoration: underline;
+}
