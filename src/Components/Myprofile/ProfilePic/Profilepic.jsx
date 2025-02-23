@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
-import DefaultProfile from '../../../assets/Default-profile.jpg';
+import DefaultProfile from "../../../assets/Default-profile.jpg";
 
 const HiddenInput = styled('input')({
   clip: 'rect(0 0 0 0)',
