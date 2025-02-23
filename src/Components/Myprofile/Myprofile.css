@@ -1,15 +1,119 @@
-.profileContainer{
-    height: max-content;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    padding-top: 7vh;
-}
-
-.profileContent{
-    height: max-content;
-    width: 100vw;
-    margin-top: 5vh;
-    display: flex;
-    justify-content: center;
-}
+/* Profile Container and Card */
+.profile-container {
+	padding: 80px 20px 20px;
+	max-width: 1200px;
+	margin: 0 auto;
+  }
+  
+  .profile-card {
+	background: white;
+	border-radius: 15px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+	padding: 30px;
+  }
+  
+  /* Profile Header and Picture */
+  .profile-header {
+	display: flex;
+	align-items: center;
+	gap: 30px;
+	margin-bottom: 30px;
+  }
+  
+  .profile-picture {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 3px solid #4CAF50;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  /* Applications Section */
+  .applications-section {
+	margin-top: 30px;
+	padding-top: 20px;
+	border-top: 1px solid #eee;
+  }
+  
+  .applications-section h3 {
+	color: #333;
+	margin-bottom: 20px;
+  }
+  
+  .application-card {
+	background: #f8f9fa;
+	padding: 20px;
+	border-radius: 8px;
+	margin-bottom: 20px;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+  
+  .application-card h4 {
+	color: #2c3e50;
+	margin-bottom: 15px;
+  }
+  
+  /* Interview Rounds */
+  .interview-rounds {
+	margin-top: 15px;
+	border-top: 1px solid #eee;
+	padding-top: 15px;
+  }
+  
+  .interview-rounds h5 {
+	color: #2c3e50;
+	margin-bottom: 10px;
+  }
+  
+  .round {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+	margin: 5px 0;
+	background: white;
+	border-radius: 4px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  
+  .round.upcoming {
+	border-left: 4px solid #ffc107;
+  }
+  
+  .round.completed {
+	border-left: 4px solid #28a745;
+  }
+  
+  .round.pending {
+	border-left: 4px solid #dc3545;
+  }
+  
+  .no-applications {
+	text-align: center;
+	color: #666;
+	font-style: italic;
+	padding: 20px;
+	background: #f8f9fa;
+	border-radius: 8px;
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+	.profile-container {
+	  padding: 60px 15px 15px;
+	}
+  
+	.profile-header {
+	  flex-direction: column;
+	  text-align: center;
+	}
+  
+	.profile-picture {
+	  width: 100px;
+	  height: 100px;
+	}
+  
+	.application-card {
+	  padding: 15px;
+	}
+  }
