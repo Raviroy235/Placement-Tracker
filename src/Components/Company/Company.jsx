@@ -1,15 +1,14 @@
 import { useState } from "react";
 import './Company.css';
-
-function ManageCompany() {
-    const [count, setCount] = useState(0);
-    return (
+function Comp(){
+    const [count, setCount] = useState(0)
+    return(
         <>
-        <div className="companyManager">
-            Manage Your Business
+        <div className="Comp">
+            Manage Your Company
         </div>
-        </>
-    );
-}
 
-export default ManageCompany;
+        </>
+    )
+}
+export default Comp
