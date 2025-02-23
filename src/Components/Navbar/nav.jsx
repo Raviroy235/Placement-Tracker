@@ -1,57 +1,48 @@
-import { useState } from 'react';
-import './nav.css';
-import logo from '../../assets/logo.svg';
-import { Link } from 'react-router-dom';
+import { useState, useContext } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { UserContext } from '../Context/UserContext';
+import "./nav.css";
 
 function Nav() {
-  const [count, setCount] = useState(0);
+  const { userData } = useContext(UserContext);
+  const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
-  function openNav() {
-    document.getElementById("mysidepanel").style.height = "100%";
-    
-  }
-
-  function closeNav() {
-    document.getElementById("mysidepanel").style.height = "0%";
-   
-  }
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
-    <>
-      <nav className='nav'>
-        <div className='navdiv'>
-          <img id="logoimg" src={logo} alt="Logo"/>
-          <div style={{display: "flex", flexDirection: "column", justifyContent: "center"}}>
-          <div style={{display: "flex", flex: "wrap"}}>
-          <ul className='list'>
-            <li style={{listStyle: "none"}}><Link style={{color: "#333399"}} to="/myprofile" id='linkbutt'>My Profile</Link></li>
-            <li style={{listStyle: "none"}}><Link style={{color: "#333399"}} to="#">Services</Link></li>
-            <li style={{listStyle: "none"}}><Link style={{color: "#333399"}} to="/Company">Company</Link></li>
-            <li style={{listStyle: "none"}}><Link style={{color: "#333399"}} to="/feedback">Feedback</Link></li>
-            <li style={{listStyle: "none"}}><Link style={{color: "#333399"}} to="">Notifications</Link></li>
-          </ul>
-          <div id='signupdiv'>
-          <button id='signupbutt'>Sign up</button>
+    <nav className="nav">
+      <div className="nav-container">
+        {!userData.name ? (
+          <div className="signup-btn-container">
+            <Link to="/signup" className="signup-btn">Sign Up</Link>
           </div>
-          </div>
-          </div>
-
-          {/* It's only for responsive mobile */}
-          <div id='mysidepanel' className='sidepanel'>
-            <div id='elements'>
-            <Link to="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</Link>
-            <p><Link to='/myprofile'>My Profile</Link></p>
-            <p><Link to='/'>Services</Link></p>
-            <p><Link to='/Company'>Company</Link></p>
-            <p><Link to='/feedback'>Feedback</Link></p>
-            <p><Link to=''>Notifications</Link></p>
+        ) : (
+          <>
+            <div className="home-nav">
+              <ul className="nav-links">
+                <li><Link to="/myprofile" className={location.pathname === "/myprofile" ? "active" : ""}>My Profile</Link></li>
+                <li><Link to="/opportunities" className={location.pathname === "/opportunities" ? "active" : ""}>Opportunities</Link></li>
+                <li><Link to="/feedback" className={location.pathname === "/feedback" ? "active" : ""}>Feedback</Link></li>
+                <li><Link to="/contact" className={location.pathname === "/contact" ? "active" : ""}>Contact</Link></li>
+              </ul>
             </div>
-          </div>
-          <span id="menu" style={{ fontSize: '35px', cursor: 'pointer' }} onClick={openNav}>&#9776;</span>
-        </div>
-      </nav>
-      {/* <button id="signresp">Sign In</button> */}
-    </>
+
+            <div className="menu-btn" onClick={toggleMenu}>☰</div>
+
+            <div className={`sidepanel ${isOpen ? "open" : ""}`}>
+              <button className="closebtn" onClick={toggleMenu}>&times;</button>
+              <Link to="/myprofile" onClick={toggleMenu}>My Profile</Link>
+              <Link to="/opportunities" onClick={toggleMenu}>Opportunities</Link>
+              <Link to="/feedback" onClick={toggleMenu}>Feedback</Link>
+              <Link to="/contact" onClick={toggleMenu}>Contact</Link>
+            </div>
+          </>
+        )}
+      </div>
+    </nav>
   );
 }
 
