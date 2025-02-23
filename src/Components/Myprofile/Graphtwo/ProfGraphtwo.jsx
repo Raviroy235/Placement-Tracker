@@ -1,22 +1,23 @@
 import * as React from 'react';
-import { CustomPieChart } from '@mui/x-charts/CustomPieChart';
+import { PieChart } from "@mui/x-charts";
 import { useDrawingArea } from '@mui/x-charts/hooks';
 import { styled } from '@mui/material/styles';
 
 const data = [
-  { value: 5 },
-  { value: 10 },
-  { value: 15 },
-  { value: 20 },
+  { id: 0, value: 5, label: "A" },
+  { id: 1, value: 10, label: "B" },
+  { id: 2, value: 15, label: "C" },
+  { id: 3, value: 20, label: "D" },
 ];
 
 const size = {
   width: 350,
   height: 175,
 };
+
 const pl = ['rgb(154, 154, 154)', 'rgb(33, 27, 25)', 'rgb(24, 56, 130)', 'rgb(57, 105, 139)'];
 
-const StyledCustomPieChart = styled(CustomPieChart)({});
+const StyledPieChart = styled(PieChart)({}); 
 
 const StyledText = styled('text')(({ theme }) => ({
   fill: theme.palette.text.primary,
@@ -42,9 +43,9 @@ function PieCenterLabel({ children }) {
 export default function CustomPieChartWithCenterLabel() {
   return (
     <Container>
-      <StyledCustomPieChart colors={pl} series={[{ data, innerRadius: 70 }]} {...size}>
+      <StyledPieChart colors={pl} series={[{ data, innerRadius: 70 }]} {...size}>
         <PieCenterLabel>Logical Ability</PieCenterLabel>
-      </StyledCustomPieChart>
+      </StyledPieChart>
     </Container>
   );
 }
