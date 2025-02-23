@@ -1,40 +1,200 @@
-.navbar{
-    width: 100vw;
-    height: 12vh;
-    background-color: white;
-    position: fixed;
-    z-index: 2;
-}
-#brandLogo{
-    width: 8vw;
-    height: 20vh;
-    margin-top: -4vh;
-}
-.navContainer{
-    width: 80vw;
-    height: 12vh;
-    display: flex;
-    flex-direction: row;
-    padding-left: 11vw;
-    padding-right: 11vw;
-    justify-content: space-between;
-}
-.menuItems{
-    padding-left: 3vw;
-    width: max-content;
-    height: max-content;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-.menuItems li{
-    font-weight: 500;
-    font-size: large;
-    font-family: poppins-regular !important;
-    text-shadow: 0 1px 0 rgba(0,0,0,0.5);
-    margin-right: 2vw;
-    text-decoration-color: black;
-}
-.menuItems li:hover{
-    text-decoration: underline;
-}
+/* General Navigation */
+.nav {
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+  }
+  
+  .nav-container {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding: 20px;
+	width: 100%;
+  }
+  
+  /* Sign-Up Button (Before Sign-In) */
+  .signup-btn-container {
+	position: absolute;
+	top: 80px;
+	right: 30px;
+  }
+  
+  .signup-btn {
+	display: inline-block;
+	color: white;
+	text-decoration: none;
+	font-size: 1.5rem;
+	font-weight: 700;
+	background: #4CAF50;
+	padding: 12px 30px;
+	border-radius: 8px;
+	transition: all 0.3s ease;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  }
+  
+  .signup-btn:hover {
+	background: #45a049;
+	transform: translateY(-2px);
+	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Home Navigation Bar */
+  .home-nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: white;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+	z-index: 1001;
+	display: flex;
+	justify-content: center;
+	padding: 15px 0;
+  }
+  
+  .nav-links {
+	display: flex;
+	gap: 30px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+  }
+  
+  .nav-links a {
+	color: #333;
+	text-decoration: none;
+	font-size: 1.1rem;
+	font-weight: 600;
+	padding: 8px 16px;
+	border-radius: 6px;
+	transition: all 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+	color: #4CAF50;
+	background: rgba(76, 175, 80, 0.1);
+  }
+  
+  .nav-links a.active {
+	color: white;
+	background: #4CAF50;
+  }
+  
+  /* Profile Button */
+  .profile-btn {
+	font-size: 1.2rem;
+	font-weight: 600;
+	color: #333;
+	background: #f4f4f4;
+	padding: 10px 20px;
+	border-radius: 8px;
+	transition: all 0.3s ease;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	margin-right: 15px;
+	text-decoration: none;
+  }
+  
+  .profile-btn:hover {
+	background: #ddd;
+	transform: translateY(-2px);
+  }
+  
+  /* Menu Button */
+  /* Ensure Menu Button (☰) is Visible */
+.menu-btn {
+	font-size: 2rem;
+	cursor: pointer;
+	padding: 10px;
+	border-radius: 5px;
+	background: #f4f4f4;
+	transition: 0.3s;
+	display: block !important; /* Ensure visibility */
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	z-index: 1003;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .menu-btn:hover {
+	background: #ddd;
+	transform: scale(1.05);
+  }
+  
+  
+  /* Side Panel */
+  .sidepanel {
+	position: fixed;
+	top: 0;
+	right: -250px;
+	width: 250px;
+	height: 100%;
+	background: white;
+	padding: 20px;
+	box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+	z-index: 1002;
+	transition: right 0.3s ease;
+  }
+  
+  .sidepanel.open {
+	right: 0;
+  }
+  
+  .sidepanel a {
+	display: block;
+	font-size: 1.1rem;
+	padding: 12px 15px;
+	border-radius: 4px;
+	transition: all 0.3s ease;
+	text-decoration: none;
+	color: #333;
+  }
+  
+  .sidepanel a:hover {
+	color: #4CAF50;
+	background: rgba(76, 175, 80, 0.1);
+  }
+  
+  .closebtn {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	border: none;
+	background: none;
+	font-size: 28px;
+	cursor: pointer;
+	color: #333;
+	padding: 5px 10px;
+	border-radius: 4px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+	.signup-btn-container {
+	  top: 60px;
+	  right: 15px;
+	}
+  
+	.menu-btn {
+	  font-size: 1.8rem;
+	  top: 15px;
+	  right: 15px;
+	}
+  }
+  
+  @media (max-width: 480px) {
+	.signup-btn-container {
+	  top: 50px;
+	  right: 10px;
+	}
+  
+	.menu-btn {
+	  font-size: 1.6rem;
+	  top: 10px;
+	  right: 10px;
+	}
+  }
+  
