@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import './Home.css'
 import './HomeResp.css'
-import Chart from '../Graphs/Chart.jsx'
-import StatsPie from '../Graphs/StatsPie.jsx'
+import Chart from '../Graph/Chart.jsx'
+import StatsPie from '../Graph/StatsPie.jsx'
 
 function Dashboard() {
     return (
