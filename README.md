@@ -44,8 +44,6 @@ Running the Application
 
 python main.py
 
-Access the app at http://127.0.0.1:5000/
-
 Technologies Used
 
 Frontend: HTML, CSS, JavaScript
