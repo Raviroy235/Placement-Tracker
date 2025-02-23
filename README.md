@@ -1,31 +1,62 @@
-# Placement Tracker
+Placement Tracker
 
-A **React.js web application** designed to **streamline student placements** by managing **profiles, recruiter interactions, and interview schedules**. It provides **real-time updates, task organization, and analytics**, ensuring **efficiency and transparency** in the placement process.
+Overview
 
----
+Placement Tracker is a web-based application that helps students track their skills, study progress, and find upcoming job placements based on CGPA, skills, and education. The platform allows user logins and provides insights into available job opportunities and required courses.
 
-## Key Features
+Features
 
-### 📊 Interview Progress Monitoring
-- Track interview phases: **Application, Resume Screening, Technical Round, HR Discussion**.
-- Set alerts and reminders for upcoming interview steps.
+User Authentication: Login and signup functionality.
 
-### ✅ Task Organization
-- **Create, modify, and prioritize** interview preparation tasks.
-- Set **deadlines**, track progress, and categorize tasks (**Coding, Resume Updates, Mock Interviews**).
+Skill Tracking: Users can add and update their skills.
 
-### 🏢 Company Database Management
-- Maintain a list of prospective employers.
-- Store **company details, track application progress, key contacts, and personalized notes**.
+Placement Listings: View available job placements based on qualifications.
 
-### 🎯 Interview Preparation Tools
-- Access **coding challenge platforms, interview questions, and best practices**.
-- Monitor **mock interview performance** and receive feedback.
+Course Recommendations: Suggests courses to improve job eligibility.
 
-### 📅 Calendar Synchronization
-- Schedule and organize **interviews, preparation tasks, and deadlines** efficiently.
+Database Integration: Stores user information, skills, and placement details.
 
----
+Project Structure
+
+Placement-Training/
+│-- app/
+│   │-- static/
+│   │   │-- css/ (Stylesheets)
+│   │   │-- js/ (JavaScript files)
+│   │-- templates/ (HTML templates)
+│   │-- routes.py (Handles app routing)
+│   │-- models.py (Database models)
+│   │-- forms.py (User forms handling)
+│-- main.py (Entry point for the app)
+│-- config.py (Configuration settings)
+│-- requirements.txt (Dependencies)
+│-- database.db (SQLite database)
+
+Installation & Setup
+
+Prerequisites
+
+Ensure you have Python installed. You can install dependencies using:
+
+pip install -r requirements.txt
+
+Running the Application
+
+python main.py
+
+Access the app at http://127.0.0.1:5000/
+
+Technologies Used
+
+Frontend: HTML, CSS, JavaScript
+
+Backend: Flask (Python)
+
+Database: SQLite
+
+Contribution
+
+Feel free to fork this repository and contribute to the project by submitting pull requests.--
 
 ## Tech Stack
 
