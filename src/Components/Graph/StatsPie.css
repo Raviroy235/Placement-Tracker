@@ -1,0 +1,10 @@
+.stats-container {
+	margin-top: 40px; /* Adjust spacing as needed */
+	padding: 20px;
+	text-align: center;
+  }
+  
+  h2 {
+	margin-bottom: 20px; /* Space between title and chart */
+  }
+  
