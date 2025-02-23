@@ -1,15 +1,15 @@
 import { useState } from "react";
-
 import './Feedback.css';
-function Profile(){
-    const [count, setCount] = useState(0)
-    return(
-        <>
-        <div className="feed">
-            Feedback
-        </div>
 
+function UserFeedback() {
+    const [count, setCount] = useState(0);
+    return (
+        <>
+        <div className="feedbackSection">
+            User Feedback
+        </div>
         </>
-    )
+    );
 }
-export default Profile
+
+export default UserFeedback;
