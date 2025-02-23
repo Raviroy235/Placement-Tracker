@@ -1,0 +1,148 @@
+.signup-container {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	min-height: 100vh;
+	padding: 100px 20px 20px;
+	position: relative;
+	z-index: 100;
+  }
+  
+  .signup-form {
+	background: white;
+	padding: 30px;
+	border-radius: 8px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+	width: 100%;
+	max-width: 400px;
+	position: relative;
+  }
+  
+  .signup-form h2 {
+	text-align: center;
+	margin-bottom: 24px;
+	color: #333;
+	font-size: 24px;
+	font-weight: 600;
+  }
+  
+  .form-group {
+	margin-bottom: 20px;
+	position: relative;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+	width: 100%;
+	padding: 12px 15px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	font-size: 16px;
+	transition: all 0.3s ease;
+	background: #f8f9fa;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+	border-color: #4CAF50;
+	outline: none;
+	box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+	background: white;
+  }
+  
+  .form-group textarea {
+	resize: vertical;
+	min-height: 100px;
+  }
+  
+  .signup-button {
+	width: 100%;
+	padding: 14px;
+	background: #4CAF50;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+  }
+  
+  .signup-button:hover {
+	background: #45a049;
+	transform: translateY(-1px);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .signup-button:active {
+	transform: translateY(0);
+	box-shadow: none;
+  }
+  
+  .error-message {
+	color: #dc3545;
+	text-align: left;
+	margin-bottom: 20px;
+	padding: 12px 15px;
+	background: #fff5f5;
+	border-radius: 4px;
+	border-left: 4px solid #dc3545;
+	font-size: 14px;
+  }
+  
+  .error-message p {
+	margin: 5px 0;
+  }
+  
+  /* Input validation styles */
+  .form-group input:invalid {
+	border-color: #dc3545;
+  }
+  
+  .form-group input:valid {
+	border-color: #28a745;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 480px) {
+	.signup-container {
+	  padding: 80px 15px 15px;
+	}
+  
+	.signup-form {
+	  padding: 20px;
+	}
+  
+	.signup-form h2 {
+	  font-size: 20px;
+	}
+  
+	.form-group input,
+	.form-group textarea {
+	  font-size: 14px;
+	  padding: 10px 12px;
+	}
+  
+	.signup-button {
+	  padding: 12px;
+	  font-size: 14px;
+	}
+  }
+  
+  /* Animation for form appearance */
+  @keyframes formAppear {
+	from {
+	  opacity: 0;
+	  transform: translateY(-20px);
+	}
+	to {
+	  opacity: 1;
+	  transform: translateY(0);
+	}
+  }
+  
+  .signup-form {
+	animation: formAppear 0.5s ease forwards;
+  }
