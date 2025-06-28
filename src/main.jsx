@@ -2,22 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
+import { UserProvider } from "./Components/Context/UserContext"; // ✅ important
 
-const router = createBrowserRouter(
-  [
-    {
-      path: "/*",
-      element: <App />,
-    },
-  ],
+const router = createBrowserRouter([
   {
-    future: {
-      v7_startTransition: true,  // Enables React 18's startTransition
-      v7_relativeSplatPath: true, // Updates relative route resolution for v7
-    },
-  }
-);
+    path: "/*",
+    element: <App />,
+  },
+]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
+  <UserProvider>
+    <RouterProvider router={router} />
+  </UserProvider>
 );

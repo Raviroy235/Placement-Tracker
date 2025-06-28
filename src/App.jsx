@@ -5,8 +5,8 @@ import MyUserProfile from './Components/Myprofile/Myprofile.jsx';
 import Opportunities from './Components/Opportunities.jsx';
 import UserReviews from './Components/UserReviews.jsx';
 import SignUp from './Components/SignUp.jsx';
-//import { UserProvider } from './Components/Context/UserContext';
-//import Contact from './Components/Contact/Contact.jsx';
+import Contact from './Components/Contact/Contact.jsx';
+import { UserProvider } from './Components/Context/UserContext';
 import './App.css';
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/myprofile" element={<MyUserProfile />} />
-		<Route path="/opportunities" element={<Opportunities />} />
+        <Route path="/opportunities" element={<Opportunities />} />
         <Route path="/feedback" element={<UserReviews />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<p>Page Not Found</p>} />
