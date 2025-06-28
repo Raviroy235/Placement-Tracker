@@ -1,5 +1,5 @@
 import React from 'react';
-import defaultProfilePic from '../../assets/Default-profile.jpg';
+import defaultProfilePic from '../../assets/Blank-profile-image.jpg';
 import './Myprofile.css';
 
 const MyUserProfile = () => {
