@@ -4,9 +4,9 @@ import Home from './Components/Home/Home.jsx';
 import MyUserProfile from './Components/Myprofile/Myprofile.jsx';
 import Opportunities from './Components/Opportunities.jsx';
 import UserReviews from './Components/UserReviews.jsx';
-import SignUp from './Components/SignUp/SignUp.jsx';
-import { UserProvider } from './Components/Context/UserContext';
-import Contact from './Components/Contact/Contact.jsx';
+import SignUp from './Components/SignUp.jsx';
+//import { UserProvider } from './Components/Context/UserContext';
+//import Contact from './Components/Contact/Contact.jsx';
 import './App.css';
 
 function App() {
