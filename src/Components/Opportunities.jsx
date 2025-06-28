@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import "./Opportunities.css";
-import microsoftLogo from "../../assets/microsoft.png";
-import googleLogo from "../../assets/google.png";
-import amazonLogo from "../../assets/amazon.png";
-import ibmLogo from "../../assets/ibm.png";
-import infosysLogo from "../../assets/infosys.png";
-import flipkartLogo from "../../assets/flipkart.png";
+
+import microsoftLogo from '../assets/microsoft.png';
+import googleLogo from '../assets/google.png';
+import amazonLogo from '../assets/amazon.png';
+import ibmLogo from '../assets/ibm.png';
+import infosysLogo from '../assets/infosys.png';
+import flipkartLogo from '../assets/flipkart.png';
+
 
 const Opportunities = () => {
   const [activeTab, setActiveTab] = useState("all");
