@@ -1,5 +1,4 @@
-import React, { useState, useContext } from "react";
-import { UserContext } from "../Context/UserContext";
+import React, { useState } from "react";
 import "./Opportunities.css";
 import microsoftLogo from "../../assets/microsoft.png";
 import googleLogo from "../../assets/google.png";
@@ -9,7 +8,6 @@ import infosysLogo from "../../assets/infosys.png";
 import flipkartLogo from "../../assets/flipkart.png";
 
 const Opportunities = () => {
-  const { userData, setUserData } = useContext(UserContext);
   const [activeTab, setActiveTab] = useState("all");
   const [showApplicationForm, setShowApplicationForm] = useState(false);
   const [selectedCompany, setSelectedCompany] = useState(null);
@@ -37,10 +35,14 @@ const Opportunities = () => {
   const filteredCompanies = activeTab === "all" ? companies : companies.filter((company) => company.category === activeTab);
 
   const handleApply = (company) => {
-    if (!userData || !userData.name) {
+    // Placeholder check (replace with actual auth logic)
+    const isAuthenticated = true;
+
+    if (!isAuthenticated) {
       alert("Please sign up first to apply for jobs");
       return;
     }
+
     setSelectedCompany(company);
     setShowApplicationForm(true);
   };
@@ -53,6 +55,7 @@ const Opportunities = () => {
       return;
     }
 
+    // Simulate application submission (replace with backend integration)
     const applicationDetails = {
       companyName: selectedCompany.name,
       role: applicationData.role,
@@ -67,10 +70,7 @@ const Opportunities = () => {
       ],
     };
 
-    setUserData((prev) => ({
-      ...prev,
-      applications: [...(prev.applications || []), applicationDetails],
-    }));
+    console.log("Application submitted:", applicationDetails);
 
     setShowApplicationForm(false);
     setApplicationData({ role: "", resume: null });
@@ -122,7 +122,7 @@ const Opportunities = () => {
         ))}
       </div>
 
-      {showApplicationForm && (
+      {showApplicationForm && selectedCompany && (
         <div className="application-modal">
           <div className="modal-content">
             <h3>Apply to {selectedCompany.name}</h3>
