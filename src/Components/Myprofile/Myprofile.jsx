@@ -1,10 +1,38 @@
-import React, { useContext } from 'react';
-import { UserContext } from '../Context/UserContext';
+import React from 'react';
 import defaultProfilePic from '../../assets/Default-profile.jpg';
 import './Myprofile.css';
 
 const MyUserProfile = () => {
-  const { userData } = useContext(UserContext);
+  // Dummy userData (replace this with actual data or props later)
+  const userData = {
+    name: 'Demo User',
+    email: 'demo@example.com',
+    applications: [
+      {
+        companyName: 'Google',
+        role: 'Software Engineer',
+        appliedDate: '2025-03-10T12:00:00Z',
+        status: 'Applied',
+        nextSteps: [
+          {
+            stage: 'Online Assessment',
+            date: '2025-03-20T12:00:00Z',
+            status: 'Upcoming',
+          },
+          {
+            stage: 'Technical Round',
+            date: '2025-03-27T12:00:00Z',
+            status: 'Pending',
+          },
+          {
+            stage: 'HR Round',
+            date: '2025-04-03T12:00:00Z',
+            status: 'Pending',
+          }
+        ]
+      }
+    ]
+  };
 
   return (
     <div className="profile-container">
