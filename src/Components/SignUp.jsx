@@ -1,11 +1,9 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { UserContext } from '../Context/UserContext';
 import './SignUp.css';
 
 const SignUp = () => {
   const navigate = useNavigate();
-  const { setUserData } = useContext(UserContext);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -57,48 +55,11 @@ const SignUp = () => {
       return;
     }
 
-    const onlineAssessmentDate = new Date('2025-03-20');
-    const technicalRoundDate = new Date('2025-03-27');
-    const hrRoundDate = new Date('2025-04-03');
-    setError('');
-    setUserData({
-      name: formData.name,
-      email: formData.email,
-      isAuthenticated: true,
-      applications: [],
-      profile: {
-        college: '',
-        degree: '',
-        graduationYear: '',
-        skills: [],
-        experience: []
-      },
-      preferences: {
-        jobType: [],
-        location: [],
-        salary: ''
-      },
-      notifications: [],
-      assessmentSchedule: [
-        {
-          stage: 'Online Assessment',
-          date: onlineAssessmentDate.toLocaleDateString(),
-          status: 'Scheduled'
-        },
-        {
-          stage: 'Technical Round',
-          date: technicalRoundDate.toLocaleDateString(),
-          status: 'Pending'
-        },
-        {
-          stage: 'HR Round',
-          date: hrRoundDate.toLocaleDateString(),
-          status: 'Pending'
-        }
-      ]
-    });
+    // Normally you'd send formData to a backend or store in localStorage
+    console.log("Registered user:", formData);
 
     alert("Registration successful!");
+    setError('');
     navigate('/myprofile');
   };
 
@@ -108,12 +69,12 @@ const SignUp = () => {
         <h2>Sign Up</h2>
         {error && (
           <div className="error-message">
-            {error.split('\n').map((err, i) => 
+            {error.split('\n').map((err, i) =>
               err ? <p key={i}>{err}</p> : null
             )}
           </div>
         )}
-        
+
         <div className="form-group">
           <input
             type="text"
